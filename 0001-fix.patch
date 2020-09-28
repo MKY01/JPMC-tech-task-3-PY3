@@ -1,0 +1,26 @@
+From f520f330b6743ed20c33ba4d49196ef3d8301e8a Mon Sep 17 00:00:00 2001
+From: mkydatascientist <myip01@mail.bbk.ac.uk>
+Date: Mon, 28 Sep 2020 21:06:51 +0100
+Subject: [PATCH] fix
+
+a bug fix
+---
+ src/DataManipulator.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/DataManipulator.ts b/src/DataManipulator.ts
+index 64fa1f9..86ab077 100644
+--- a/src/DataManipulator.ts
++++ b/src/DataManipulator.ts
+@@ -12,7 +12,7 @@ export interface Row {
+ 
+ 
+ export class DataManipulator {
+-  static generateRow(serverResponds: ServerRespond[]): Row[] {
++  static generateRow(serverRespond: ServerRespond[]): Row {
+     const priceABC = (serverRespond[0].top_ask.price + serverRespond[0].top_bid.price) / 2;
+     const priceDEF = (serverRespond[1].top_ask.price + serverRespond[1].top_bid.price) / 2;
+     const ratio = priceABC / priceDEF;
+-- 
+2.24.3 (Apple Git-128)
+
